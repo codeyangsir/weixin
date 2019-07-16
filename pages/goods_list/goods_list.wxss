@@ -1,0 +1,61 @@
+/* 1.0 搜索框  */
+.search{
+  background-color: #eee;
+  padding: 20rpx 16rpx;
+}
+.search-in{
+  background-color: #fff;
+  border-radius: 5rpx;
+  height: 60rpx;
+  /* 伸缩盒显示模式 */
+  display: flex;
+  /* 交叉轴 */
+  align-items: center;
+  padding-left: 30rpx;
+}
+.search-text{
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+/* 2.0 tab 栏 */
+.tabs{
+  display: flex;
+  border-bottom: 1rpx solid #ddd;
+}
+.tabs-item{
+  flex: 1;
+  text-align: center;
+  line-height: 100rpx;
+}
+.tabs-item.active{
+  color:#eb4450;
+}
+/* 3.0 商品列表 */
+.goods-item{
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+}
+.goods-item-image{
+  width: 200rpx;
+  height: 200rpx;
+  /* flex-shrink属性定义了项目的缩小比例。flex-shrink的值为0时，不缩放。 */
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}  
+.goods-item-info{
+  display: flex;
+  /* 垂直方向 */
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goods-item-info-name{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.goods-item-info-price{
+   /* background: linear-gradient(to right, #f7560c, #10ec08, #23fdf2); */
+   background:pink
+}

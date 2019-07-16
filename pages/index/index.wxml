@@ -1,0 +1,53 @@
+<!-- 1.1 使用搜索框组件 -->
+<Search></Search>
+<!-- 轮播图 -->
+<swiper indicator-dots indicator-color="rgba(0,0,0.5)" indicator-active-color="rgba(255,255,255,0.8)" autoplay interval="2000" circular>
+  <block wx:for="{{slider}}" wx:key="goods_id">
+    <swiper-item>
+      <image class="slider-image" src="{{item.image_src}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 中间导航 -->
+<view class="ulli">
+  <view class="ulli_yuan">
+    <image src="../../images/tabs/classify.png"></image>
+    <text>html</text>
+  </view>
+  <view class="ulli_yuan">
+    <image src="../../images/tabs/classify.png"></image>
+    <text>css</text>
+  </view>
+  <view class="ulli_yuan">
+    <image src="../../images/tabs/classify.png"></image>
+    <text> ajax</text>
+  </view>
+  <view class="ulli_yuan">
+    <image src="../../images/tabs/classify.png"></image>
+    <text>vue</text>
+  </view>
+</view>
+<!-- 电梯楼层 -->
+<!-- 一楼 -->
+<block wx:for="{{ floor }}" wx:key="">
+  <view class="floor-head">
+    <image class="floor-head-image" src="{{item.floor_title.image_src}}"></image>
+  </view>
+
+  <view class="floor-body">
+    <view class="floor-body-left">
+      <image class="floor-body-left-image" src="{{item.product_list[0].image_src}}"></image>
+    </view>
+    <view class="floor-body-right">
+      <!-- 二层循环 循环里面的图片-->
+      <block wx:for="{{item.product_list}}" wx:key="name" wx:for-item="item2" wx:for-index="index2">
+        <!-- wx:if 条件渲染,可以判断从第几张图片开始渲染 -->
+        <image class="floor-body-right-image" wx:if="{{index2 > 0}}" src="{{item2.image_src}}"></image>
+      </block>
+    </view>
+  </view>
+</block>
+<!-- 5.0 返回顶部 -->
+<view hidden="{{ !showTop }}" class="top" bindtap="goTop" data-top="{{ 0 }}">
+  <text class="top-text">顶部</text>
+</view>
